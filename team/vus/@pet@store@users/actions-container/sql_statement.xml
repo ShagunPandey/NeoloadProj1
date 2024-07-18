@@ -1,0 +1,16 @@
+<custom-action actionType="SQL" isHit="false" name="sql_statement" uid="8a526190-d930-4834-9d06-415ec821231d">
+    <description>This action executes SQL statements.
+Possible parameters are:
+- type: (required) the type of SQL statement, possible values are QUERY and UPDATE.
+- connectionName: (required) the name of the connection to map with other advanced actions.
+- sqlStatement: (required) the SQL statement to execute.
+- variableName: (optional) the NeoLoad variable to put the value(s) in.
+- includeQueryResults: (optional) if set at false, the results are not included in the XML response. Default value is true. Should be "false" to optimize resource consumption when executing a query that returns multiple rows and retrieving the values from the variables.
+- batchSize: (optional) the batch number to keep in memory before performing a batch update. Default value is 500.
+- autoCommit: (optional) Allow user to deactivate the autocommit at the end of the action. Default value is True.
+</description>
+    <custom-action-parameter name="type" type="TEXT" value="QUERY"/>
+    <custom-action-parameter name="connectionName" type="TEXT" value="myConnection"/>
+    <custom-action-parameter name="sqlStatement" type="TEXT" value="select * from Employee"/>
+    <custom-action-parameter name="variableName" type="TEXT" value="emply"/>
+</custom-action>
